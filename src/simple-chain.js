@@ -20,11 +20,12 @@ const chainMaker = {
   },
   reverseChain() {
     this.chain.reverse();
-    return this
+    return this;
   },
   finishChain() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    const result = this.chain.map(link => `( ${link} )`).join('~~'); // Формируем строку
+    this.chain = [];
+    return result;
   }
 };
 
